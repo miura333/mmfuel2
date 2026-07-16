@@ -35,10 +35,18 @@ button, input { font: inherit; }
 .headerAction:disabled { opacity: .45; }
 .message { margin: 12px; padding: 10px; border-radius: 6px; font-size: 14px; }
 .error { color: #8b1a1a; background: #fff0f0; }
-.forward-enter-active, .forward-leave-active { transition: transform 250ms ease; }
+.forward-enter-active, .forward-leave-active,
+.back-enter-active, .back-leave-active {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+.forward-enter-active, .back-enter-active { z-index: 2; }
+.forward-leave-active, .back-leave-active { z-index: 1; }
 .forward-enter-from { transform: translateX(100%); }
 .forward-leave-to { transform: translateX(-100%); }
-.back-enter-active, .back-leave-active { transition: transform 250ms ease; }
 .back-enter-from { transform: translateX(-100%); }
 .back-leave-to { transform: translateX(100%); }
 @media (min-width: 700px) { .appWrapper { left: 50%; max-width: 520px; transform: translateX(-50%); border-inline: 1px solid #ddd; } }
