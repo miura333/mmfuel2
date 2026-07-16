@@ -38,4 +38,7 @@ button, input { font: inherit; }
 .forward-enter-active, .forward-leave-active { transition: transform 250ms ease; }
 .forward-enter-from { transform: translateX(100%); }
 .forward-leave-to { transform: translateX(-100%); }
+.back-enter-active, .back-leave-active { transition: transform 250ms ease; }
+.back-enter-from { transform: translateX(-100%); }
+.back-leave-to { transform: translateX(100%); }
 @media (min-width: 700px) { .appWrapper { left: 50%; max-width: 520px; transform: translateX(-50%); border-inline: 1px solid #ddd; } }

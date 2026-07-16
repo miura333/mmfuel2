@@ -11,7 +11,7 @@ import './style.css'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    { path: '/', name: 'dashboard', component: DashboardView },
+    { path: '/', name: 'dashboard', component: DashboardView, meta: { transition: 'back' } },
     { path: '/history', name: 'history', component: HistoryView },
     { path: '/cars', name: 'cars', component: CarListView },
     { path: '/fuel/add', name: 'add-fuel', component: AddFuelView },
