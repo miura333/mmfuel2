@@ -1,0 +1,12 @@
+/.env
+/.htaccess
+/.htdigest
+/node_modules/
+/dist/
+/coverage/
+/.vite/
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+.DS_Store

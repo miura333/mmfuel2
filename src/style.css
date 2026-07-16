@@ -1,0 +1,41 @@
+:root { font-family: 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif; color: #4f4f4f; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 280px; }
+button, input { font: inherit; }
+.appWrapper { position: absolute; inset: 0 auto auto 0; width: 100%; min-height: 100%; background: #fff; }
+.appHeader { width: 100%; height: 64px; padding-top: env(safe-area-inset-top); background: #f7f7f7; }
+.appHeaderTitle { display: grid; grid-template-columns: 20% 60% 20%; align-items: end; width: 100%; height: 64px; padding-bottom: 10px; font-size: 18px; text-align: center; }
+.headerSide { padding: 0 8px; text-align: left; }
+.headerRight { text-align: right; }
+.appHeaderBorder { width: 100%; height: 1px; background: #4f4f4f; }
+.linkBackButtonText { color: #06c; text-decoration: none; }
+.latestAndAverageTitleText { width: 100%; height: 25px; font-size: 18px; text-align: center; line-height: 25px; }
+.latestTitle { position: absolute; top: 80px; }
+.averageTitle { position: absolute; top: 220px; }
+.fuelValueText { font-size: clamp(64px, 21vw, 80px); font-style: normal; font-weight: normal; }
+.fuelUnitText { margin-left: 4px; font-size: 18px; font-style: normal; }
+.latestValue, .averageValue { position: absolute; left: 0; width: 100%; height: 80px; text-align: center; line-height: 80px; }
+.latestValue { top: 115px; }
+.averageValue { top: 255px; }
+.loading { color: #777; font-size: 14px; }
+.addButtonParent, .historyButtonParent { position: absolute; left: 0; width: 100%; height: 48px; }
+.addButtonParent { top: 400px; }
+.historyButtonParent { top: 470px; }
+.addHistoryButton { display: block; width: 128px; height: 48px; margin: auto; border: 2px solid #4f4f4f; border-radius: 10px; text-align: center; line-height: 44px; }
+.linkButtonText { color: #4f4f4f; text-decoration: none; }
+.listPage { position: relative; }
+.historyCell { width: 100%; min-height: 72px; background: #fff; }
+.historyCellColl1, .historyCellColl2 { display: flex; justify-content: space-between; padding: 0 5%; }
+.historyCellColl1 { height: 42px; font-size: 22px; line-height: 42px; }
+.historyCellColl2 { height: 30px; font-size: 14px; line-height: 30px; }
+.carlistCellColl { display: block; padding: 0 5%; border: 0; color: #4f4f4f; font-size: 22px; text-align: left; line-height: 72px; cursor: pointer; }
+.addInputForm { width: 100%; height: 72px; padding: 10px 5%; border: 0; outline: none; text-align: right; }
+.addInputFormText { color: #4f4f4f; font-size: 18px; }
+.headerAction { padding: 0; border: 0; color: #06c; background: transparent; cursor: pointer; }
+.headerAction:disabled { opacity: .45; }
+.message { margin: 12px; padding: 10px; border-radius: 6px; font-size: 14px; }
+.error { color: #8b1a1a; background: #fff0f0; }
+.forward-enter-active, .forward-leave-active { transition: transform 250ms ease; }
+.forward-enter-from { transform: translateX(100%); }
+.forward-leave-to { transform: translateX(-100%); }
+@media (min-width: 700px) { .appWrapper { left: 50%; max-width: 520px; transform: translateX(-50%); border-inline: 1px solid #ddd; } }
