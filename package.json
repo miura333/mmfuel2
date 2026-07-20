@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -R api dist/api && cp .htaccess dist/.htaccess && cp .htdigest dist/.htdigest",
+    "build": "vite build && cp -R api dist/api && cp .htaccess dist/.htaccess",
     "preview": "vite preview"
   },
   "dependencies": {

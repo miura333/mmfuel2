@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mmfuel-static-v3'
+const CACHE_NAME = 'mmfuel-static-v4'
 const APP_SHELL = ['./', './manifest.webmanifest', './apple-touch-icon.png', './icons/icon-180.png', './icons/icon-192.png', './icons/icon-512.png']
 
 self.addEventListener('install', (event) => {
@@ -12,7 +12,8 @@ self.addEventListener('activate', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET' || new URL(event.request.url).pathname.includes('/api/')) return
+  const path = new URL(event.request.url).pathname
+  if (event.request.method !== 'GET' || path.includes('/api/') || path.endsWith('/login')) return
   event.respondWith(
     fetch(event.request)
       .then((response) => {

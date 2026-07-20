@@ -5,7 +5,11 @@ async function request(path, options = {}) {
     ...options,
   })
   const data = await response.json().catch(() => ({ error: 'サーバーから不正な応答が返されました。' }))
-  if (!response.ok) throw new Error(data.error || '通信に失敗しました。')
+  if (!response.ok) {
+    const error = new Error(data.error || '通信に失敗しました。')
+    error.status = response.status
+    throw error
+  }
   return data
 }
 

@@ -6,14 +6,17 @@ use Mmfuel\Config;
 use Mmfuel\Database;
 use Mmfuel\FuelRepository;
 use Mmfuel\Http;
+use Mmfuel\Auth;
 
 require __DIR__ . '/src/Config.php';
 require __DIR__ . '/src/Database.php';
 require __DIR__ . '/src/Http.php';
 require __DIR__ . '/src/FuelRepository.php';
+require __DIR__ . '/src/Auth.php';
 
 try {
     $config = Config::load(dirname(__DIR__) . '/.env');
+    Auth::requireAuthenticated($config);
     $repository = new FuelRepository(Database::connect($config));
     $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
     $path = '/' . trim($_SERVER['PATH_INFO'] ?? '', '/');

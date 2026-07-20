@@ -1,15 +1,10 @@
 Options -Indexes
 DirectoryIndex index.html
 
-AuthType Digest
-AuthName "mmfuel2"
-AuthUserFile /absolute/path/to/mmfuel2/.htdigest
-Require valid-user
-
-<Files "apple-touch-icon.png">
-  AuthType None
-  Require all granted
-</Files>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^login/?$ api/auth.php [L,QSA]
+</IfModule>
 
 <FilesMatch "^\.">
   Require all denied
